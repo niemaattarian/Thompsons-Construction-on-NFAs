@@ -194,3 +194,44 @@ print(compile("ab.cd.|"))
 print(compile("aa.*"))
 print(compile("a?a.c*"))
 print(compile("(b.d)|(c+a*)."))
+
+
+def followes(state):
+  state = set()
+  state.add(state)
+
+  if state.label is None:
+    if state.edge1 is not None:
+      state |= followes(state.edge1)
+
+    if state.edge2 is not None:
+      state |= followes(state.edge2)
+
+  return state
+
+def match(infix, string):
+  pofix = shunt(infix)
+  nfa = compile(pofix)
+
+  current = set()
+  nexts = set()
+
+  current |= followes(nfa.initial)
+
+  for s in string:
+    for c in current:
+      if c.label == s:
+
+        nexts |= followes(c.edge1)
+
+    current = nexts
+    nexts = set()
+
+  return (nfa.accept in  current)
+
+infixes = ["a.b.c*", "a.(b|d).c*", "(a.b|d))*", "a.(b.b)*.c"]
+strings = ["", "abc", "abbc", "abcc", "abad", "abbbc"]
+
+for i in infixes:
+  for s in strings:
+    print(match(i, s), i, s)
