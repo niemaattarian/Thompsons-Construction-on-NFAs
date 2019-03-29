@@ -38,3 +38,19 @@ We join the new initial state to nfa's initial state and new accept state and th
 Finally we append the new NFA to the NFA stack. We continue to do this with each of our characters in the dictionary.
 
 When you run this, the user is shown the memory location of the NFA object.
+
+###**Matching Regular Expressions**
+
+####**Followes Function**
+This helper function returns the set of states that can be reached from the state following 'e' arrows.
+We do this by creating a new set with state as its only member.
+We check if the state has arrows labeled e from it and we do this by looking for states where the label is 'None'.
+If the states are labelled 'None' then we use nested if statement to follow the edges, 1 and 2.
+
+####**Match Function**
+This function takes the regular expression, changes it to infix and compiles the postfix regular expression to an NFA.
+We then create empty sets, 'current' and 'nexts' and loop through each character in the string and inside that loop we loop through the current set of states that we have.
+We check if the state is labelled 's', if so, we add it into the 'next' set. That next state has now been set as a current state and the next state is cleared and is now a empty set.
+We then check if the accept state is in the set of current states
+
+Finally, we have a nested for loop which checks if the regular expression matches the string giving out a 'true' or 'false' output.
