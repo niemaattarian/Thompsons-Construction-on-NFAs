@@ -54,3 +54,32 @@ We check if the state is labelled 's', if so, we add it into the 'next' set. Tha
 We then check if the accept state is in the set of current states
 
 Finally, we have a nested for loop which checks if the regular expression matches the string giving out a 'true' or 'false' output.
+
+
+###**Research**
+In doing this project, I had no previous experience with Python so I knew that my research must be in depth. I completed this project over the course of a few weeks we continual practise of Python.
+
+What I found most helpful were the videos uploaded to LearnOnline. My approach was to first understand the Algorithms on paper before coding. This would give me an understanding of the structure of the code and not seem clueless as to method of what is going on. Once I coded the algorithms, I went back to the on paper explanation to compare and walk-through step by step, side by side to try and get a full understanding of the code.
+
+Furthermore, I researched online about each algorithm and found Wikipedia tobe very useful with it's diagrams and examples.
+
+**_Reference links:_**
+https://en.wikipedia.org/wiki/Thompson%27s_construction#Rules
+
+https://en.wikipedia.org/wiki/Shunting-yard_algorithm#The_algorithm_in_detail
+
+https://en.wikipedia.org/wiki/Shunting-yard_algorithm#Detailed_example
+
+http://www.oxfordmathcenter.com/drupal7/node/628
+
+https://swtch.com/~rsc/regexp/regexp1.html
+
+https://web.microsoftstream.com/video/5e2a482a-b1c9-48a3-b183-19eb8362abc9
+
+https://web.microsoftstream.com/video/cfc9f4a2-d34f-4cde-afba-063797493a90
+
+https://web.microsoftstream.com/video/6b4ba6a4-01b7-4bde-8f85-b4b96abc902a
+
+https://web.microsoftstream.com/video/946a7826-e536-4295-b050-857975162e6c
+
+https://web.microsoftstream.com/video/1b3e7f4f-69e0-4316-853f-c63b14f9c36a
