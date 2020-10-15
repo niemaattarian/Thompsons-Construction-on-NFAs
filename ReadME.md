@@ -1,13 +1,13 @@
-# _**Niema Attarian**_
+_**Niema Attarian**_
 
-# **_G00346901@gmit.ie_**
+**_G00346901@gmit.ie_**
 
-###**OVERVIEW**
+**OVERVIEW**
 I created this GitHub repository for my Graph Theory project 2019. For my project, I was asked to write a Python program to execute regular expressions on strings using an algorithm known as Thompson's construction. In this, I have to build a non-deterministic finite automaton (NFA) from a regular expression, and can use this to check if the regular expression matches any given string text.
 
 This project can be cloned by navigating to the clone button on GitHub. From here, you can 'cd' into the project and run the project via that 'python Project.py' command in the command window.
 
-###**SHUNTING YARD ALGORITHM**
+**SHUNTING YARD ALGORITHM**
 
 The purpose of the Shunting Yard Algorithm is to parse expressions from infix notations to postfix expressions or notation strings using stacks.
 
@@ -27,11 +27,11 @@ If it isn't an open bracket, closing bracket or a special character, we append w
 
 We double check at the end of the function that everything in the stack has been pushed.
 
-###**Thompson's Construction**
+**Thompson's Construction**
 Thompson's Construction is a method in which we transform a regular expression into a (NFA) non-deterministic finite automaton. This can further be used to match strings against the expression.
 In this algorithm we created methods which will help execute what we intend to do.
 
-####**Compile Method**
+#**Compile Method**
 In this method we initially create an NFA stack which is empty. This will contain instances of the NFA class already created.
 Firstly, we loop through the postfix regular expression one character at a time. We created an instance of the NFA class that has an accept state and an initial state. We join these via arrows labelled by the character.
 We join the new initial state to nfa's initial state and new accept state and then join old accept state to the new accept state and nfa's initial state
@@ -39,15 +39,15 @@ Finally we append the new NFA to the NFA stack. We continue to do this with each
 
 When you run this, the user is shown the memory location of the NFA object.
 
-###**Matching Regular Expressions**
+**Matching Regular Expressions**
 
-####**Followes Function**
+**Followes Function**
 This helper function returns the set of states that can be reached from the state following 'e' arrows.
 We do this by creating a new set with state as its only member.
 We check if the state has arrows labeled e from it and we do this by looking for states where the label is 'None'.
 If the states are labelled 'None' then we use nested if statement to follow the edges, 1 and 2.
 
-####**Match Function**
+**Match Function**
 This function takes the regular expression, changes it to infix and compiles the postfix regular expression to an NFA.
 We then create empty sets, 'current' and 'nexts' and loop through each character in the string and inside that loop we loop through the current set of states that we have.
 We check if the state is labelled 's', if so, we add it into the 'next' set. That next state has now been set as a current state and the next state is cleared and is now a empty set.
@@ -56,7 +56,7 @@ We then check if the accept state is in the set of current states
 Finally, we have a nested for loop which checks if the regular expression matches the string giving out a 'true' or 'false' output.
 
 
-###**Research**
+**Research**
 In doing this project, I had no previous experience with Python so I knew that my research must be in depth. I completed this project over the course of a few weeks we continual practise of Python.
 
 What I found most helpful were the videos uploaded to LearnOnline. My approach was to first understand the Algorithms on paper before coding. This would give me an understanding of the structure of the code and not seem clueless as to method of what is going on. Once I coded the algorithms, I went back to the on paper explanation to compare and walk-through step by step, side by side to try and get a full understanding of the code.
